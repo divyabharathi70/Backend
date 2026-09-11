@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("TASK 1");
+        console.log("PRIVATE BANK BALANCE");
+        
+        
+        // TASK 1 – PRIVATE BANK BALANCE
+
+        // Create a function called createBankAccount().
+        // Requirements:
+        // - Inside the function create:
+        //  let balance = 5000
+        // - balance must not be directly accessible outside.
+        // - Return a function called checkBalance().
+        // - checkBalance() should print the current balance.
+        // - Try creating another balance variable outside with value 100000.
+        // - Prove that the outside balance does not change the private balance.
+        // Expected:
+        // Outside Balance: 100000
+        // Account Balance: 5000
+
+        const createBankAccount = ()=>{
+            let  balance = 5000
+            const checkBalance =()=>{
+                console.log(`Account Balance :${balance}`);    
+            }
+            return checkBalance
+        }
+
+        const balanceCheck = createBankAccount()
+
+        balanceCheck()
+        balanceCheck()
+        balanceCheck()
+
+        balance = 10000
+        console.log(`Outside Balance :${balance}`);
+
+
+        console.log("TASK 2");
+        console.log("DEPOSIT USING CLOSURE");
+        // TASK 2 – DEPOSIT USING CLOSURE
+
+        // Create a function called createAccount().
+        // Requirements:
+        // - Create private variable:
+        // let balance = 1000
+        // - Return two functions:
+        //deposit (amount)
+        // getBalance()
+        // - deposit() should add money to balance.
+        // - getBalance() should display the current balance.
+        // Example:
+        // account.deposit(500)
+        // account.deposit(200)
+        // account.getBalance()
+        // Expected Output:
+        // 1700
+        // Condition:
+        // Do not directly access or modify balance outside createAccount().
+
+        const createAccount =()=>{
+            let balance = 1000
+            const bank = {
+                deposit : (amount)=>{
+                    balance+=amount
+                    console.log(`Ater deposited ${amount} : ${balance}`);
+                },
+                balance : ()=>{
+                    console.log(`Balance : ${balance}`);
+                }
+            }
+            return bank
+        }
+
+        const bankFunc = createAccount()
+        bankFunc.deposit(1000)
+        bankFunc.deposit(2000)
+        bankFunc.balance()
+
+        console.log("TASK 3");
+        console.log("PRIVATE COUNTER");
+        // TASK 3 – PRIVATE COUNTER
+        // Create a function called createCounter().
+        // Requirements:
+        // - Create:
+        // let count = 0
+        // - Return three functions:
+        // increment()
+        // decrement()
+        // getCount()
+        // - increment() should increase count by 1.
+        // - decrement() should decrease count by 1.
+        // - getCount() should display the current count.
+        // Example:
+        // counter.increment()
+        // counter.increment()
+        // counter.increment()
+        // counter.decrement()
+        // counter.getCount()
+        // Expected Output:
+        // 2
+        // Also try:
+        // --------------------------------------
+        // let count = 100;
+        // Prove that this outside count does not affect the closure count.
+        // ------------------------------------------------------------------------------------------------
+
+        const createCounter =()=>{
+            let count = 100
+            let counter = {
+                increment : ()=>{
+                    count+=1
+                },
+                decrement : ()=>{
+                    count-=1
+                },
+                getCount : ()=>{
+                    console.log(count);
+                } 
+            }
+            return counter
+        }
+
+        let count = 103 // assessing count from outside doesnt affect inner count
+
+        let counterFunc = createCounter()
+        counterFunc.increment()
+        counterFunc.increment()
+        counterFunc.increment()
+        counterFunc.decrement()
+        counterFunc.decrement()
+        counterFunc.getCount()
+
+        console.log("TASK 4");
+        console.log("EMPLOYEE SALARY PRIVACY");
+        // TASK 4 – EMPLOYEE SALARY PRIVACY
+
+        // Create a function called createEmployee(name, initialSalary).
+        // Requirements:
+        // - Store salary inside the function as a private variable.
+        // - Return:
+        // getName()
+        // getSalary()
+        // increaseSalary(amount)
+        // - getName() should return employee name.
+        // - getSalary() should return private salary.
+        // - increaseSalary() should increase the salary.
+        // - Do not allow a negative salary increment.
+        // Example:
+        // let employee = createEmployee("Arun", 25000);
+        // employee.increaseSalary(5000);
+        // console.log(employee.getName());
+        // console.log(employee.getSalary());
+        // Expected Output:
+        // Arun
+        // 30000
+        // Finally try creating:
+        // let salary = 100000;
+        // Check whether this outside salary changes the employee's private salary.
+
+        const createEmployee=(empName, initialSalary) =>{
+            let empyName = empName
+            let initSalary = initialSalary
+            const empDetails = {
+                name : ()=>{
+                    console.log(empyName);
+                },
+                salary : ()=>{
+                    console.log(initSalary);
+                },
+                salIncreament : (increament)=>{
+                    initSalary+=increament
+                }
+            }
+            return empDetails
+        }
+
+        let salary = 100000;
+
+        const empPanel = createEmployee("Divya",200000)
+        empPanel.name()
+        empPanel.salary()
+        empPanel.salIncreament(6000)
+        empPanel.salary()
+    </script>
+</body>
+</html>

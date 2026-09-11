@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("TASK 1");
+        console.log("Printing 1 to 10");
+
+        for (let i=1;i<=10;i++){
+            console.log(i);  
+        }
+
+        console.log("TASK 2");
+        console.log("Even / Odd");
+        for (let i=1;i<=20;i++){
+            if(i%2==0){
+                console.log(i);
+            }
+        }
+
+        console.log("TASK 3");
+        console.log("Tables");
+        let num = 5
+
+        for (let a=1;a<=10;a++){
+            console.log(`${a}*${num}=${num*a}`);
+        }
+
+        console.log("TASK 4");
+        console.log("NumberPyramid");
+        // 1
+        // 1 2
+        // 1 2 3
+        // 1 2 3 4
+        // 1 2 3 4 5
+
+        console.log("TASK 5");
+        console.log("StarPyramid");
+        let row = ""
+
+        for(let a=1;a<=5;a++){
+            for(let b=1;b<=a;b++){
+                row+=b
+            }
+            console.log(row);
+            row=""
+        }
+
+        // *
+        // * *
+        // * * *
+        // * * * *
+        // * * * * *
+
+        let row2 = ""
+        for(let i=1;i<=5;i++){
+            for(let j=1;j<=i;j++){
+                row2+="*"
+            }
+            console.log(row);
+            row2=""
+        }
+    </script>
+</body>
+</html>
+
+
