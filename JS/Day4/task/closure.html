@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // TASK 1 – PRIVATE SALARY
+// Create a function called createEmployee().
+// Requirements:
+// - Create a private variable:
+// let salary = 20000
+// - Return an inner arrow function.
+// - Store the returned function in a variable called updateSalary.
+// - The inner function should receive an amount.
+// - Add the amount to the existing salary.
+// - Return the updated salary.
+// - Call updateSalary() multiple times.
+// - Salary must remember the previous updated value.
+// Example:
+// updateSalary(5000)
+// Output: 25000
+// updateSalary(3000)
+// Output: 28000
+// Concepts:
+// - Closure
+// - Private variable
+// - Returning function
+// - Saving returned function in variable
+// - Maintaining previous state
+
+const createEmployee = ()=>{
+    let salary = 20000
+    const salaryIncreament = (amount)=>{
+            salary += amount
+            console.log(`Output :${salary}`);
+    }
+    return salaryIncreament
+    
+}
+
+    const updateSalary = createEmployee()
+    updateSalary(3000)
+    updateSalary(6000)
+    updateSalary(3000)
+
+    // TASK 2 – PRODUCT STOCK
+    // Create a function called createStock().
+    // Requirements:
+    // - Create a private variable:
+    // let stock = 10
+    // - Return an object containing two arrow functions:
+    // addStock(quantity)
+    // sellProduct(quantity)
+    // - addStock() should increase the stock.
+    // - sellProduct() should decrease the stock.
+    // - Do not allow selling if requested quantity is greater than available stock.
+    // - Store the returned object in a variable called product.
+    // - Call both functions multiple times.
+    // - Stock should remember its previous value.
+
+    const createStock = ()=>{
+        let stock = 10
+        return stockMarket = {
+            add :  addStock = (quantity)=>{
+                stock+=quantity
+                console.log(stock);
+            },
+            sell : sellProduct=(quantity) =>{
+                if (quantity<stock){
+                    stock-=quantity
+                    console.log(stock);
+                }
+                else{
+                    console.log("Stock is less");
+                }
+            }
+        }
+    }
+
+    const product = createStock()
+    product.add(20)
+    product.sell(20)
+    product.add(20)
+    product.sell(40)
+        </script>
+    </body>
+    </html>
+
+
