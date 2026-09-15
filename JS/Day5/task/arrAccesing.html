@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // TASK 1 – Student Names
+        // Create an array with 5 student names.
+        // Requirements:
+        // - Access the first student.
+        // - Access the third student.
+        // - Access the last student.
+        // - Print all three values using console.log().
+        // Do not use loops or array methods.
+
+        let stuNames = ["diya","Anand","aadhi","Mohan"]
+        console.log(`First Student ${stuNames[0]}`);
+        console.log(`Second Student ${stuNames[2]}`);
+        console.log(`Last Student ${stuNames[stuNames.length-1]}`);
+
+
+        // TASK 2 – Product Prices
+        // Create an array:
+        // [1500, 2500, 3500, 4500, 5500]
+        // Requirements:
+        // - Access 1500 using index.
+        // - Access 3500 using index.
+        // - Access 5500 using index.
+        // - Add the first and last values.
+        // - Print the total.
+        // Expected Output:
+        // 7000
+
+        let productPrices = [1500, 2500, 3500, 4500, 5500]
+        console.log(`First price ${productPrices[0]}`);
+        console.log(`Second price ${productPrices[2]}`);
+        console.log(`Last price ${productPrices[productPrices.length-1]}`);
+        console.log(`Total of first and last price ${productPrices[0]+productPrices[productPrices.length-1]}`);
+        
+        // TASK 3 – Find Array Value Using Index
+        // Create an array:
+        // ["HTML", "CSS", "JavaScript", "React", "Node"]
+        // Requirements:
+        // - Print "JavaScript" using its index.
+        // - Print "React" using its index.
+        // - Print "Node" using arr.length concept.
+        // Condition:
+        // Do not directly write the values inside console.log().
+
+        let arr = ["HTML", "CSS", "JavaScript", "React", "Node"]
+        console.log(` JavaScript :${arr[2]}`);
+        console.log(`React : ${arr[3]}`);
+        console.log(`Node: ${arr[arr.length-1]}`);
+
+        // TASK 4 – Nested Array Access
+        // Create:
+        // let data = [
+        //     ["Arun", 80],
+        //     ["Bala", 75],
+        //     ["Kumar", 90]
+        // ];
+        // Requirements:
+        // - Access "Arun".
+        // - Access Arun's mark.
+        // - Access "Bala".
+        // - Access Kumar's mark.
+        // Expected Output:
+        // Arun
+        // 80
+        // Bala
+        // 90
+
+        let data = [
+            ["Arun", 80],
+            ["Bala", 75],
+            ["Kumar", 90]
+        ];
+
+        console.log(data[0][0]);
+        console.log(data[0][1]);
+        console.log(data[1][0]);
+        console.log(data[1][1]);
+        
+        // TASK 5 – Logical Array Access
+        // Create:
+        // let numbers = [10, 20, 30, 40, 50];
+        // Requirements:
+        // - Access the second value.
+        // - Access the second-last value.
+        // - Add both values.
+        // - Print the answer.
+        // Expected Output:
+        // 60
+
+        let numbers = [10, 20, 30, 40, 50];
+        console.log(`second value ${numbers[1]}`);
+        console.log(` second-last value ${numbers[3]}`);
+        console.log(`Total of both ${numbers[1]+numbers[3]}`);
+    </script>
+</body>
+</html>
