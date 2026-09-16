@@ -1,69 +1,232 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+    <title>JavaScript Learning</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-200 min-h-screen flex items-center justify-center">
-    <div class="bg-white p-6 rounded-xl shadow-md">
-        <h1 class="text-2xl font-bold text-black-600">Day 1</h1>
-        <p class="text-gray-500 mb-5">JS Basics</p>
-        <div class="flex gap-6">
-            <a href="./JS/Day1/task/javaScript.html" class="bg-gray-100 w-60 p-5 rounded-lg hover:shadow-md">
-                <h2 class="text-xl font-bold text-gray-800">Task 1</h2>
-                <p class="text-gray-500 mt-2">JavaScript ,Statement, Expressions</p>
-            </a>
-            <a href="./JS/Day1/task/varName.js" class="bg-gray-100 w-60 p-5 rounded-lg hover:shadow-md">
-                <h2 class="text-xl font-bold text-gray-800">Task 2</h2>
-                <p class="text-gray-500 mt-2">Variable Names</p>
-            </a>
-        </div>
-    </div>
 
-    <div class="bg-white p-6 rounded-xl shadow-md">
-        <h1 class="text-2xl font-bold text-black-600">Day 2</h1>
-        <p class="text-gray-500 mb-5">JS Basics - variable , hoisting ,loops</p>
-        <div class="flex gap-6">
-            <a href="./JS/Day2/task/forLoop.html" class="bg-gray-100 w-60 p-5 rounded-lg hover:shadow-md">
-                <h2 class="text-xl font-bold text-gray-800">Tasks 1-5</h2>
-                <p class="text-gray-500 mt-2">Loops</p>
-            </a>
-        </div>
-    </div>
+<body class="bg-gray-200 min-h-screen">
 
-    <div class="bg-white p-6 rounded-xl shadow-md">
-        <h1 class="text-2xl font-bold text-black-600">Day 3</h1>
-        <p class="text-gray-500 mb-5">Function , callback , closure </p>
-        <div class="flex gap-6">
-            <a href="./JS/Day3/task/closure1.html" class="bg-gray-100 w-60 p-5 rounded-lg hover:shadow-md">
-                <h2 class="text-xl font-bold text-gray-800">Tasks 1-4</h2>
-                <p class="text-gray-500 mt-2">Closures</p>
-            </a>
-        </div>
-    </div> 
+    <!-- Header -->
+    <header class="text-center py-10">
+        <h1 class="text-4xl font-bold text-black">
+            JavaScript Learning Journey
+        </h1>
 
-     <div class="bg-white p-6 rounded-xl shadow-md">
-        <h1 class="text-2xl font-bold text-black-600">Day 4</h1>
-        <p class="text-gray-500 mb-5">Closure</p>
-        <div class="flex gap-6">
-            <a href="./JS/Day4/task/closure.html" class="bg-gray-100 w-60 p-5 rounded-lg hover:shadow-md">
-                <h2 class="text-xl font-bold text-gray-800">Tasks 1-4</h2>
-                <p class="text-gray-500 mt-2">Closures</p>
-            </a>
-        </div>
-    </div> 
+        <p class="text-gray-600 mt-2">
+            JavaScript Basics & Practice
+        </p>
+    </header>
 
-    <div class="bg-white p-6 rounded-xl shadow-md">
-        <h1 class="text-2xl font-bold text-black-600">Day 5</h1>
-        <p class="text-gray-500 mb-5">Array</p>
-        <div class="flex gap-6">
-            <a href="./JS/Day5/task/arrAccesing.html" class="bg-gray-100 w-60 p-5 rounded-lg hover:shadow-md">
-                <h2 class="text-xl font-bold text-gray-800">Tasks 1-5</h2>
-                <p class="text-gray-500 mt-2">Array creation, access, add deletion, looping</p>
-            </a>
+
+    <!-- Cards -->
+    <main class="max-w-6xl mx-auto px-6 pb-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Day 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden
+                        hover:-translate-y-1 hover:shadow-xl transition">
+
+                <div class="bg-black text-white p-5">
+                    <h2 class="text-2xl font-bold">Day 1</h2>
+                    <p class="text-gray-300">JS Basics</p>
+                </div>
+
+                <div class="p-5 space-y-3">
+
+                    <a href="./JS/Day1/task/javaScript.html"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Task 1
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            JavaScript, Statements & Expressions
+                        </p>
+                    </a>
+
+                    <a href="./JS/Day1/task/varName.js"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Task 2
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            Variable Names
+                        </p>
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Day 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden
+                        hover:-translate-y-1 hover:shadow-xl transition">
+
+                <div class="bg-gray-800 text-white p-5">
+                    <h2 class="text-2xl font-bold">Day 2</h2>
+                    <p class="text-gray-300">
+                        Variables, Hoisting & Loops
+                    </p>
+                </div>
+
+                <div class="p-5">
+
+                    <a href="./JS/Day2/task/forLoop.html"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Tasks 1–5
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            Loops
+                        </p>
+
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Day 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden
+                        hover:-translate-y-1 hover:shadow-xl transition">
+
+                <div class="bg-black text-white p-5">
+                    <h2 class="text-2xl font-bold">Day 3</h2>
+                    <p class="text-gray-300">
+                        Function, Callback & Closure
+                    </p>
+                </div>
+
+                <div class="p-5">
+
+                    <a href="./JS/Day3/task/closure1.html"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Tasks 1–4
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            Closures
+                        </p>
+
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Day 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden
+                        hover:-translate-y-1 hover:shadow-xl transition">
+
+                <div class="bg-gray-800 text-white p-5">
+                    <h2 class="text-2xl font-bold">Day 4</h2>
+                    <p class="text-gray-300">
+                        Closure
+                    </p>
+                </div>
+
+                <div class="p-5">
+
+                    <a href="./JS/Day4/task/closure.html"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Tasks 1–4
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            Closures
+                        </p>
+
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Day 5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden
+                        hover:-translate-y-1 hover:shadow-xl transition">
+
+                <div class="bg-black text-white p-5">
+                    <h2 class="text-2xl font-bold">Day 5</h2>
+                    <p class="text-gray-300">
+                        Array
+                    </p>
+                </div>
+
+                <div class="p-5">
+
+                    <a href="./JS/Day5/task/arrAccesing.html"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Tasks 1–5
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            Array Creation, Access, Add, Delete & Looping
+                        </p>
+
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- Day 6 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden
+                        hover:-translate-y-1 hover:shadow-xl transition">
+
+                <div class="bg-gray-800 text-white p-5">
+                    <h2 class="text-2xl font-bold">Day 6</h2>
+                    <p class="text-gray-300">
+                        Objects & Array Methods
+                    </p>
+                </div>
+
+                <div class="p-5">
+
+                    <a href="./JS/Day6/task/arrHigherOrderFunction.html"
+                       class="block bg-gray-100 border border-gray-300
+                              p-4 rounded-lg hover:bg-gray-200 transition">
+
+                        <h3 class="font-bold text-black">
+                            Tasks 1–5
+                        </h3>
+
+                        <p class="text-gray-600 text-sm mt-1">
+                            Higher Order Array Methods
+                        </p>
+
+                    </a>
+
+                </div>
+            </div>
+
         </div>
-    </div> 
+
+    </main>
+
 </body>
 </html>
+```

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("TASK 1");
+        
+        // TASK 1 – MAP: Employee Salary Increment
+        // Create an array:
+        // let salaries = [15000, 20000, 25000, 30000, 35000];
+        // Requirements:
+        // - Use map() only.
+        // - Increase every employee salary by 2000.
+        // - Store the result in a new array.
+        // - Print original salaries.
+        // - Print updated salaries.
+        // Expected Output:
+        // [17000, 22000, 27000, 32000, 37000]
+
+        let salaries = [15000, 20000, 25000, 30000, 35000];
+        const salaryHike = salaries.map((e)=>{
+            return e+2000
+        })
+
+        console.log(`SalaryHikes ${salaryHike}`);
+        console.log(`Actual Salary ${salaries}`);
+        
+        console.log("TASK 2");
+        // TASK 2 – FILTER: Find Eligible Students
+        // Create an array:
+        // let marks = [35, 78, 42, 90, 25, 67, 55];
+        // Requirements:
+        // - Use filter() only.
+        // - Find students who scored 50 or above.
+        // - Store them in a new array.
+        // - Print the result.
+        // Expected Output:
+        // [78, 90, 67, 55]
+
+        let marks = [35, 78, 42, 90, 25, 67, 55];
+        const  filtered = marks.filter((e)=>{
+                return e>=50
+        })
+
+        console.log(`Passed Students ${filtered}`);
+
+        console.log("TASK 3");
+
+        // TASK 3 – FIND: Find One Product
+        // Create:
+        // let products = [
+        //     { id: 101, name: "Laptop", price: 55000 },
+        //     { id: 102, name: "Mouse", price: 800 },
+        //     { id: 103, name: "Keyboard", price: 1500 },
+        //     { id: 104, name: "Monitor", price: 12000 }
+        // ];
+        // Requirements:
+        // - Use find().
+        // - Find the product whose id is 103.
+        // - Store the result in a variable.
+        // - Print the complete product.
+        // - Print only the product name.
+        // Expected Output:
+        // { id: 103, name: "Keyboard", price: 1500 }
+        // Keyboard
+        
+        let products = [
+             { id: 101, name: "Laptop", price: 55000},
+             { id: 102, name: "Mouse", price: 800},
+             { id: 103, name: "Keyboard", price: 1500},
+             { id: 104, name: "Monitor", price: 12000}
+         ];
+
+        let product = products.find((e)=>{
+            if(e.id==103){
+                console.log(e.name);
+                return e
+            }
+        })
+
+        console.log(product);       
+        
+        console.log("TASK 4");
+        // TASK 4 – REDUCE: Shopping Cart Total
+        // Create:
+        // let cart = [
+        //     { name: "Shirt", price: 1200 },
+        //     { name: "Shoes", price: 2500 },
+        //     { name: "Watch", price: 3000 },
+        //     { name: "Bag", price: 1500 }
+        // ];
+        // Requirements:
+        // - Use reduce() only.
+        // - Calculate the total cart price.
+        // - Initial accumulator value must be 0.
+        // - Print the final total.
+
+        let cart = [
+            { name: "Shirt", price: 1200 },
+            { name: "Shoes", price: 2500 },
+            { name: "Watch", price: 3000 },
+            { name: "Bag", price: 1500 }
+        ];
+        
+        const sum = cart.reduce((acc,cur)=>acc+cur.price,0)
+        console.log(sum);
+
+        console.log("TASK 5");
+
+        // TASK 5 – COMBINED REAL-WORLD TASK
+        // Create:
+        // let students = [
+        //     { id: 1, name: "Arun", mark: 85 },
+        //     { id: 2, name: "Bala", mark: 45 },
+        //     { id: 3, name: "Kumar", mark: 72 },
+        //     { id: 4, name: "Priya", mark: 95 },
+        //     { id: 5, name: "Ravi", mark: 38 }
+        // ];
+
+        // 1. MAP
+        // Create a new array containing only student names.
+        // Expected:
+        // ["Arun", "Bala", "Kumar", "Priya", "Ravi"]
+        // 2. FILTER
+        // Find students whose mark is 60 or above.
+        // Expected:
+        // Arun
+        // Kumar
+        // Priya
+        // 3. FIND
+        // Find the student whose id is 4.
+        // Expected:
+        // { id: 4, name: "Priya", mark: 95 }
+        // 4. REDUCE
+        // Calculate the total marks of all students.
+        // Expected:
+        // 335
+        // 5. REDUCE
+        // Calculate the average mark.
+        // Expected:
+        // 67
+
+        let students = [
+            { id: 1, name: "Arun", mark: 85 },
+            { id: 2, name: "Bala", mark: 45 },
+            { id: 3, name: "Kumar", mark: 72 },
+            { id: 4, name: "Priya", mark: 95 },
+            { id: 5, name: "Ravi", mark: 38 }
+        ];
+
+        let stuNames = students.map((e)=>e.name)
+        console.log(stuNames);
+
+        let filteredStudents = students.filter((e)=>{
+                return e.mark>=60
+        })
+        console.log(filteredStudents);
+        
+        let findStudent = students.find((e)=>{
+                return e.id==4
+        })
+
+        console.log(findStudent);
+
+        let markSum = students.reduce((acc,cur)=>{
+            return acc+cur.mark
+        },0)
+
+        console.log(markSum);
+        
+        
+        let sumOfMark = students.reduce((acc,cur)=>{
+            return acc+cur.mark
+        },0)
+        console.log(`Average ${sumOfMark/5}`);
+        
+    </script>
+</body>
+</html>
