@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>React Learning Notes</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white">
+
+    <!-- HEADER -->
+
+    <header class="bg-gradient-to-br from-cyan-950 via-slate-950 to-indigo-950 px-6 py-16">
+
+        <div class="mx-auto max-w-6xl">
+
+            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-300">
+                React Interview Preparation
+            </span>
+
+            <h1 class="mt-6 text-4xl font-black tracking-tight sm:text-6xl">
+                React Learning Notes
+            </h1>
+
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+                Tasks 1 to 5 with beginner-friendly explanations,
+                examples, and complete rendering process.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+
+                <a href="#task1" class="rounded-xl bg-cyan-400 px-4 py-3 font-bold text-slate-950 hover:bg-cyan-300">
+                    React Basics
+                </a>
+
+                <a href="#task2" class="rounded-xl border border-white/20 px-4 py-3 font-bold hover:bg-white/10">
+                    Components
+                </a>
+
+                <a href="#task3" class="rounded-xl border border-white/20 px-4 py-3 font-bold hover:bg-white/10">
+                    JSX
+                </a>
+
+                <a href="#task4" class="rounded-xl border border-white/20 px-4 py-3 font-bold hover:bg-white/10">
+                    DOM
+                </a>
+
+                <a href="#task5" class="rounded-xl border border-white/20 px-4 py-3 font-bold hover:bg-white/10">
+                    Rendering
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="mx-auto max-w-6xl space-y-12 px-6 py-12">
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="rounded-3xl border border-cyan-400/20 bg-cyan-400/5 p-6 sm:p-8">
+
+            <h2 class="text-2xl font-black text-cyan-300">
+                Before Learning React
+            </h2>
+
+            <div class="mt-6 grid gap-5 md:grid-cols-2">
+
+                <div class="rounded-2xl bg-slate-900 p-5">
+
+                    <h3 class="text-lg font-bold text-white">
+                        JavaScript
+                    </h3>
+
+                    <p class="mt-2 leading-7 text-slate-300">
+                        JavaScript is a programming language used
+                        to make web pages interactive.
+                    </p>
+
+                </div>
+
+
+                <div class="rounded-2xl bg-slate-900 p-5">
+
+                    <h3 class="text-lg font-bold text-white">
+                        Node.js
+                    </h3>
+
+                    <p class="mt-2 leading-7 text-slate-300">
+                        Node.js allows JavaScript to run outside
+                        the browser.
+                    </p>
+
+                </div>
+
+
+                <div class="rounded-2xl bg-slate-900 p-5">
+
+                    <h3 class="text-lg font-bold text-white">
+                        npm
+                    </h3>
+
+                    <p class="mt-2 leading-7 text-slate-300">
+                        npm helps us install and manage packages
+                        used in React projects.
+                    </p>
+
+                </div>
+
+
+                <div class="rounded-2xl bg-slate-900 p-5">
+
+                    <h3 class="text-lg font-bold text-white">
+                        React
+                    </h3>
+
+                    <p class="mt-2 leading-7 text-slate-300">
+                        React is a JavaScript library used to build
+                        user interfaces with reusable components.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TASK 1 -->
+
+        <section id="task1">
+
+            <div class="mb-6">
+
+                <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">
+                    Task 1
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black">
+                    React Basics
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-5">
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        1. What is React?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React is a JavaScript library used to build
+                        interactive user interfaces, especially
+                        web applications. It uses reusable components
+                        to organize the UI.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        2. Why do we use React?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React helps us build interactive and
+                        maintainable applications using components,
+                        declarative UI, and efficient update strategies.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        3. Is React a library or framework?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React is a JavaScript library because it
+                        mainly focuses on the user interface layer.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        4. Main features of React
+                    </h3>
+
+                    <ul class="mt-3 list-disc space-y-2 pl-6 leading-8 text-slate-300">
+
+                        <li>Component-based architecture</li>
+                        <li>JSX</li>
+                        <li>Declarative UI</li>
+                        <li>Reconciliation</li>
+                        <li>Reusable components</li>
+                        <li>One-way data flow</li>
+                        <li>Hooks</li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        5. What is a Single Page Application?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A Single Page Application loads one main HTML
+                        document and updates visible content without
+                        fully reloading the document for every navigation.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        6. What is declarative UI?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Declarative UI means describing what the UI
+                        should look like for a particular state instead
+                        of manually writing every DOM operation.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TASK 2 -->
+
+        <section id="task2">
+
+            <div class="mb-6">
+
+                <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">
+                    Task 2
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black">
+                    Components
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-5">
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        1. What is a Component?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A component is an independent and reusable
+                        part of the user interface.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        2. Why do we use Components?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Components divide a large UI into smaller
+                        parts, making the application easier to
+                        understand, maintain, and reuse.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        3. What is a Functional Component?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A functional component is a JavaScript function
+                        that returns JSX.
+                    </p>
+
+                    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm leading-7 text-purple-300"><code>function Welcome() {
+    return &lt;h1&gt;Welcome&lt;/h1&gt;;
+}</code></pre>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        4. Component-Based Architecture
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        It means building an application by combining
+                        small, independent components.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        5. What is a Component Tree?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A component tree represents the parent-child
+                        relationship between components.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        6. Why should component names start with a capital letter?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React uses capitalization to distinguish
+                        custom components from normal HTML elements.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        7. What is a reusable component?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A reusable component is written once and
+                        used in multiple places with different props.
+                    </p>
+
+                    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm leading-7 text-purple-300"><code>function Button({ text }) {
+    return &lt;button&gt;{text}&lt;/button&gt;;
+}
+
+&lt;Button text="Login" /&gt;
+&lt;Button text="Register" /&gt;</code></pre>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TASK 3 -->
+
+        <section id="task3">
+
+            <div class="mb-6">
+
+                <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">
+                    Task 3
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black">
+                    JSX
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-5">
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        1. What is JSX?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        JSX stands for JavaScript XML. It is a syntax
+                        extension that allows us to write HTML-like
+                        UI code inside JavaScript.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        2. Why do we use JSX?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        JSX makes UI code easier to read and allows
+                        JavaScript expressions to be inserted directly
+                        into the UI.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        3. Is JSX HTML?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        No. JSX is not HTML. It is transformed into
+                        JavaScript and follows React-specific rules.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        4. JavaScript expressions inside JSX
+                    </h3>
+
+                    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm leading-7 text-purple-300"><code>const name = "Divya";
+
+return &lt;h1&gt;Hello {name}&lt;/h1&gt;;</code></pre>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        5. Why do we use className?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        JSX uses className instead of class for
+                        CSS class attributes.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        6. What is React Fragment?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A Fragment allows multiple elements to be
+                        returned without adding an unnecessary
+                        wrapper element to the DOM.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        7. Important JSX Rules
+                    </h3>
+
+                    <ul class="mt-3 list-disc space-y-2 pl-6 leading-8 text-slate-300">
+
+                        <li>Close all tags.</li>
+                        <li>Use className instead of class.</li>
+                        <li>Use curly braces for expressions.</li>
+                        <li>Return one parent or Fragment.</li>
+                        <li>Use keys when rendering lists.</li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TASK 4 -->
+
+        <section id="task4">
+
+            <div class="mb-6">
+
+                <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">
+                    Task 4
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black">
+                    DOM, Virtual DOM & Reconciliation
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-5">
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        1. What is DOM?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        DOM stands for Document Object Model.
+                        It represents the HTML document as a tree.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        2. What is Virtual DOM?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        The Virtual DOM is an in-memory representation
+                        of the UI used in explaining React's update
+                        process.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        3. Difference between DOM and Virtual DOM
+                    </h3>
+
+                    <div class="mt-4 overflow-x-auto">
+
+                        <table class="w-full min-w-[500px] border-collapse text-left text-sm">
+
+                            <thead>
+
+                                <tr class="bg-cyan-950 text-cyan-300">
+
+                                    <th class="border border-white/10 p-4">
+                                        DOM
+                                    </th>
+
+                                    <th class="border border-white/10 p-4">
+                                        Virtual DOM
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody class="text-slate-300">
+
+                                <tr>
+
+                                    <td class="border border-white/10 p-4">
+                                        Browser's document representation.
+                                    </td>
+
+                                    <td class="border border-white/10 p-4">
+                                        In-memory UI representation.
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="border border-white/10 p-4">
+                                        Managed through browser APIs.
+                                    </td>
+
+                                    <td class="border border-white/10 p-4">
+                                        Used by React's rendering process.
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="border border-white/10 p-4">
+                                        Represents the actual document.
+                                    </td>
+
+                                    <td class="border border-white/10 p-4">
+                                        Helps determine required updates.
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        4. What is Reconciliation?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Reconciliation is the process React uses
+                        to compare previous and new UI descriptions
+                        and determine necessary updates.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        5. What is Diffing?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Diffing is the comparison process used to
+                        find differences between previous and new
+                        React element trees.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        6. How does React identify changes?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React considers element types, props,
+                        positions, and keys while comparing UI.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        7. Why is key important?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Keys provide stable identities for list items
+                        and help React track additions, removals,
+                        and changes.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TASK 5 -->
+
+        <section id="task5">
+
+            <div class="mb-6">
+
+                <p class="text-sm font-bold uppercase tracking-widest text-cyan-400">
+                    Task 5
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black">
+                    React Rendering Process
+                </h2>
+
+            </div>
+
+
+            <!-- FLOW -->
+
+            <div class="rounded-3xl border border-indigo-400/20 bg-indigo-400/5 p-6">
+
+                <h3 class="text-xl font-bold text-indigo-300">
+                    Complete Rendering Flow
+                </h3>
+
+                <div class="mt-6 space-y-2 text-center font-bold">
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        Component
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        JSX
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        Rendering
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        React Element Tree
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        State or Props Change
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        Re-render
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        Reconciliation + Diffing
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        Required DOM Update
+                    </div>
+
+                    <div class="text-indigo-300">↓</div>
+
+                    <div class="rounded-xl bg-slate-900 p-4">
+                        Browser UI
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="mt-6 space-y-5">
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        1. What is Rendering?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Rendering is the process in which React
+                        runs a component to calculate its UI description.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        2. What is Re-rendering?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Re-rendering means React runs a component
+                        again to calculate an updated UI description.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        3. What causes a component to re-render?
+                    </h3>
+
+                    <ul class="mt-3 list-disc space-y-2 pl-6 leading-8 text-slate-300">
+
+                        <li>State changes</li>
+                        <li>Parent re-renders</li>
+                        <li>Props change</li>
+                        <li>Context changes</li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        4. Does re-render mean the complete DOM is recreated?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        No. A re-render calculates a new UI description.
+                        React compares it with the previous description
+                        and applies the required DOM changes.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        5. What happens during reconciliation?
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React compares the previous and new rendered
+                        results and determines which parts should be
+                        preserved, updated, inserted, or removed.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        6. Relationship between Virtual DOM, Diffing and Reconciliation
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React uses in-memory UI descriptions and
+                        comparison techniques during reconciliation
+                        to determine the necessary rendered updates.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
+
+                    <h3 class="text-xl font-bold text-cyan-300">
+                        7. Explain the React rendering process
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        First, I create a component and write JSX.
+                        React renders the component and creates a UI
+                        description. When state or props change,
+                        React calculates the updated description.
+                        It compares the previous and new descriptions
+                        and applies the required changes to the
+                        browser DOM.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- YOUR NOTES AT THE END -->
+
+        <section id="my-notes">
+
+            <div class="mb-6">
+
+                <p class="text-sm font-bold uppercase tracking-widest text-amber-400">
+                    Final Notes
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black">
+                    My Handwritten Notes - Complete Revision
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-5">
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        JavaScript and React
+                    </h3>
+
+                    <ul class="mt-3 list-disc space-y-2 pl-6 leading-8 text-slate-300">
+
+                        <li>JavaScript is understood by the browser.</li>
+                        <li>Node.js allows JavaScript to run outside the browser.</li>
+                        <li>React uses JavaScript and commonly JSX.</li>
+                        <li>JSX requires transformation into JavaScript.</li>
+                        <li>Node.js is used by React development tools.</li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        Node.js and npm
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Node.js is a runtime environment for running
+                        JavaScript outside the browser.
+                    </p>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        npm is used to install and manage packages.
+                    </p>
+
+                    <pre class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm leading-7 text-purple-300"><code>npm install
+npm run dev
+npm run build</code></pre>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        Library vs Framework
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A library provides reusable functionality
+                        that developers call when needed.
+                    </p>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        A framework provides a broader application
+                        structure and conventions.
+                    </p>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React is mainly a UI library.
+                        Angular is commonly described as a framework.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        React and JSX
+                    </h3>
+
+                    <ul class="mt-3 list-disc space-y-2 pl-6 leading-8 text-slate-300">
+
+                        <li>React uses component-based architecture.</li>
+                        <li>JSX looks like HTML.</li>
+                        <li>JSX is not HTML.</li>
+                        <li>JSX is transformed into JavaScript.</li>
+                        <li>Components return JSX.</li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        Components
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Components divide a large application
+                        into smaller reusable parts.
+                    </p>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Functional components are JavaScript
+                        functions that return JSX.
+                    </p>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        Props are used to pass data.
+                        State stores changing component data.
+                    </p>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        Browser, DOM and React
+                    </h3>
+
+                    <ul class="mt-3 list-disc space-y-2 pl-6 leading-8 text-slate-300">
+
+                        <li>The browser displays the UI.</li>
+                        <li>The DOM represents the document.</li>
+                        <li>React calculates UI updates.</li>
+                        <li>Reconciliation compares UI descriptions.</li>
+                        <li>Diffing finds differences.</li>
+                        <li>Required DOM updates are committed.</li>
+
+                    </ul>
+
+                </article>
+
+
+                <article class="rounded-2xl border border-amber-400/20 bg-amber-400/5 p-6">
+
+                    <h3 class="text-xl font-bold text-amber-300">
+                        Important Revision
+                    </h3>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        React does not recreate the complete browser
+                        DOM for every re-render.
+                    </p>
+
+                    <p class="mt-3 leading-8 text-slate-300">
+                        When state changes, React runs the component
+                        again, compares the UI descriptions and
+                        updates the necessary parts.
+                    </p>
+
+                </article>
+            </div>
+
+        </section>
+
+
+
+        <!-- FINAL QUICK REVISION -->
+
+        <section class="rounded-3xl border border-emerald-400/20 bg-emerald-400/5 p-8">
+
+            <p class="text-sm font-bold uppercase tracking-widest text-emerald-400">
+                Last Page
+            </p>
+
+            <h2 class="mt-2 text-3xl font-black">
+                Final Quick Revision
+            </h2>
+
+            <div class="mt-6 space-y-4 text-slate-300">
+
+                <p>
+                    <strong class="text-emerald-300">React:</strong>
+                    JavaScript library for building user interfaces.
+                </p>
+
+                <p>
+                    <strong class="text-emerald-300">Component:</strong>
+                    Reusable part of the UI.
+                </p>
+
+                <p>
+                    <strong class="text-emerald-300">JSX:</strong>
+                    HTML-like syntax inside JavaScript.
+                </p>
+
+                <p>
+                    <strong class="text-emerald-300">DOM:</strong>
+                    Browser's tree representation of the document.
+                </p>
+
+                <p>
+                    <strong class="text-emerald-300">Re-render:</strong>
+                    Running a component again to calculate updated UI.
+                </p>
+
+                <p>
+                    <strong class="text-emerald-300">Reconciliation:</strong>
+                    Comparing previous and new UI descriptions.
+                </p>
+
+                <p>
+                    <strong class="text-emerald-300">Key:</strong>
+                    Stable identity for list items.
+                </p>
+
+            </div>
+
+
+            <div class="mt-8 rounded-2xl bg-slate-950 p-6 text-center">
+
+                <p class="font-bold leading-8 text-cyan-300">
+
+                    Component → JSX → Rendering → React Element Tree
+                    → State Change → Re-render → Reconciliation
+                    → Diffing → DOM Update → Browser UI
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="border-t border-white/10 px-6 py-10 text-center text-slate-400">
+
+        React Learning Notes • Divya
+
+    </footer>
+
+
+</body>
+
+</html>
