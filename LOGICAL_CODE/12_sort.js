@@ -16,4 +16,3 @@ console.log(arr);
 // 2. inner loop iterate from the outer loop element till the end of arr
 //     -> if outerloop element is > inner loop element then swap both - before swap store it in variable (temp) as it lose its value
 // 3. at the end of the loop arr will be sorted in ascending order
-
