@@ -24,4 +24,4 @@ else{
 // 4. Remove the last digit from temp
 // 5. If the original number and sum are the same  -  strong number
 
-// op : 145 is Strong Number
+// op : Strong Number
