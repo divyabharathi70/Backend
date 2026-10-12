@@ -6,9 +6,9 @@ const App = () => {
 
     // push add
 
-    // const copy = [...products]
-    // copy.push({name : "Sonata",price: 3300})
-    // setProducts(copy)
+    const copy = [...products]
+    copy.push({name : "Sonata",price: 3300})
+    setProducts(copy)
 
     //spread add
     
@@ -27,7 +27,7 @@ const App = () => {
         <div key={i+1}>
             <h3>{e.name}</h3>
             <h3>{e.price}</h3>
-            <button onClick={handleUpdate}>Add Product</button>
+            <button onClick={handleUpdate}>Update Product</button>
             <button onClick={handleAdd}>Add Product</button>
         </div>
       ))}
