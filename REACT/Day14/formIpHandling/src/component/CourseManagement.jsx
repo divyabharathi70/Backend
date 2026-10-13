@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const CourseManagement = () => {
     const [courseName,setCourseName] = useState("")
@@ -12,13 +12,13 @@ const CourseManagement = () => {
     }
 
     const delCourse =(element)=>{
-        setCourse(course.filter((e)=>e !==element))
+        setCourse(course.filter((e)=>e !== element))
     }
 
   return (
 
     <div>
-      <input type="text" placeholder='Enter Course to Add' onChange={(e)=>setCourseName(e.target.value)}/>
+      <input type="text" placeholder='Enter Course to Add' value={courseName} onChange={(e)=>setCourseName(e.target.value)}/>
       <button onClick={addCourse}>Add Course</button>
       <div>
         {course.map((e,i)=>(
