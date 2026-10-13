@@ -1,4 +1,4 @@
-```jsx
+
 import { useState } from 'react'
 
 const App = () => {
@@ -111,4 +111,3 @@ const App = () => {
 }
 
 export default App
-```
