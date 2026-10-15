@@ -1,111 +1,70 @@
-
 import { useState } from 'react'
 
 const App = () => {
+  const [obj,setObj] = useState({name:"",dept:"",salary:""}) //when populating values are needed in ip
   const [empDetails, setEmpDetails] = useState([])
-  const [editId, setEditId] = useState(null)
+   const [editId,setEditId] = useState(null)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    let newObj = {
-      id: editId !== null ? editId : Date.now(),
-      name: e.target.name.value,
-      dept: e.target.dept.value,
-      salary: e.target.salary.value
-    }
-
-    if (editId !== null) {
-      let copy = empDetails.map((emp) =>
-        emp.id === editId ? newObj : emp
-      )
+const saveobj = (e)=>{
+   let newData = {...obj,[e.target.name] : e.target.value}
+   setObj(newData)
+}
+  const handleSubmit = (e)=>{
+      e.preventDefault()
+      let copy = [...empDetails,obj]
       setEmpDetails(copy)
-      setEditId(null)
-    } else {
-      let copy = [...empDetails, newObj]
-      setEmpDetails(copy)
-    }
-
-    e.target.reset()
+      setObj({name:"",dept:"",salary:""})
   }
 
-  const handleEdit = (emp) => {
-    setEditId(emp.id)
-
-    document.getElementsByName("name")[0].value = emp.name
-    document.getElementsByName("dept")[0].value = emp.dept
-    document.getElementsByName("salary")[0].value = emp.salary
+  const handleDel =(id)=>{
+     setEmpDetails(empDetails.filter((_,i)=>i+1!==id))
   }
 
-  const handleDelete = (id) => {
-    let copy = empDetails.filter((emp) => emp.id !== id)
-    setEmpDetails(copy)
+  const enableEdit = (e,id)=>{
+    console.log({e,id});
+     setEditId(id)
+     setObj(e)
+  }
+   
+  const handleUpdate = ()=>{
+    const updateData = empDetails.map((e,i)=>(i+1==editId ? {...e,...obj} : e))
+    setEmpDetails(updateData)
+    setObj({name:"",dept:"",salary:""})
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter Employee Name"
-          required
-        />
-
-        <input
-          type="text"
-          name="dept"
-          placeholder="Enter Employee Department"
-          required
-        />
-
-        <input
-          type="number"
-          name="salary"
-          placeholder="Enter Employee Salary"
-          required
-        />
-
-        <input
-          type="submit"
-          value={editId !== null ? "Update Employee" : "Add Employee"}
-        />
+      <form action="" onSubmit={(e)=>handleSubmit(e)}>
+        <input type="text" name="name" onChange = {(e)=>saveobj(e)} value={obj.name} placeholder='Enter Employee Name'/>
+        <input type="text" name="dept" onChange = {(e)=>saveobj(e)} value={obj.dept} placeholder='Enter Employee dept'/>
+        <input type="number" name="salary" onChange = {(e)=>saveobj(e)} value={obj.salary} placeholder='Enter Employee Salary'/>
+        {editId? <button onClick={handleUpdate}>Update</button>:<input type="submit" placeholder = "Submit"/>}
       </form>
 
-      <table border="1">
-        <thead>
+      <table>
+         <thead>
           <tr>
-            <th>S.NO</th>
-            <th>Name</th>
-            <th>Department</th>
-            <th>Salary</th>
-            <th>Actions</th>
+              <th>S.NO</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Salary</th>
           </tr>
-        </thead>
-
-        <tbody>
-          {empDetails.map((emp, index) => (
-            <tr key={emp.id}>
-              <td>{index + 1}</td>
-              <td>{emp.name}</td>
-              <td>{emp.dept}</td>
-              <td>{emp.salary}</td>
-              <td>
-                <button type="button" onClick={() => handleEdit(emp)}>
-                  Edit
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleDelete(emp.id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+              
+         </thead>
+         <tbody>
+             {empDetails.map((e,i)=>(
+              <tr key = {i+1}>
+                <td>{e.id}</td>
+                <td>{e.name}</td>
+                <td>{e.dept}</td>
+                <td>{e.salary}</td>
+                <td><button onClick={()=>enableEdit(e,i+1)}>Edit</button></td>
+                <td><button onClick={()=>handleDel(i+1)}>Delete</button></td>
+              </tr>
+             ))}
+         </tbody>
       </table>
+
     </div>
   )
 }
