@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const ProductUpdate = () => {
 
@@ -9,11 +9,7 @@ const ProductUpdate = () => {
     })
 
     const addBrand = () => {
-
-        let update = { ...product }
-
-        update["name"] = "Dell"
-
+        let update = {...product,brand:"Dell"}
         setProduct(update)
     }
 
@@ -39,24 +35,15 @@ const ProductUpdate = () => {
                     Stock: {product.stock}
                 </h3>
 
-                <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded mr-3"
-                    onClick={addBrand}
-                >
-                    Add Brand
-                </button>
+                {product.brand ? <h3 className="text-lg font-medium mb-5">
+                    Brand: {product.brand}
+                </h3> : ""}
 
-                <button
-                    className="bg-green-500 text-white px-4 py-2 rounded"
-                    onClick={updatePrice}
->
-                    Update Price
-                </button>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded mr-3" onClick={addBrand}>Add Brand</button>
 
+                <button className="bg-green-500 text-white px-4 py-2 rounded" onClick={updatePrice}> Update Price</button>
             </div>
-
         </div>
-
     )
 }
 

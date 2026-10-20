@@ -3,7 +3,7 @@ import StudentsDetails from './component/StudentsDetails'
 import CourseManagement from './component/CourseManagement'
 import StorageNumber from './component/StorageNumber'
 import FruitListing from './component/FruitListing'
-
+import Emp from './component/Emp'
 const App = () => {
   return (
     <div>
@@ -11,6 +11,7 @@ const App = () => {
       <CourseManagement/>
       <StorageNumber/>
       <FruitListing/>
+      <Emp/>
     </div>
   )
 }

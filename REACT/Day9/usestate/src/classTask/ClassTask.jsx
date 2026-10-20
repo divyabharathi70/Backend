@@ -23,7 +23,9 @@ import { useState } from "react"
 const ClassTask = () => {
   let [count,setCount] = useState(0)
   const handleClick = () =>{
-    setCount(count++)
+    setCount(count+1)
+    setCount(count+1)
+    setCount(count+1)
   }
   return (
       <div className="flex  flex-col items-center justify-center bg-gray-100">

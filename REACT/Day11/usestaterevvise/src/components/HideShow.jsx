@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 
 const HideShow = () => {
-    const [show,setShow] = useState("react123")
+    const [show,setShow] = useState(false)
   return (
     <div>
-        {h3
-        
-        
-        
-        }
+        <h1>{show? "Password is react123" : ""}</h1>
+        <button onClick={()=>setShow(!show)}>{show? "Hide Password" : "Show Password"}</button>
     </div>
   )
 }
