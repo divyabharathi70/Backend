@@ -6,7 +6,6 @@ const Timers = () => {
 
     const startTimer = () => {
         if (timer.current !== null) return
-
         timer.current = setInterval(() => {
             setCount((p) => p + 1)
         }, 1000)

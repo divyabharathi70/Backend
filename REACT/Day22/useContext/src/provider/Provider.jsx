@@ -1,18 +1,15 @@
-import { useState } from "react"
-import DataContext from "../context/DataContext"
+import { useState } from 'react'
+import DataContext from '../context/DataContext'
 
-const Provider = ({children}) =>{
+const Provider = ({children}) => {
 
-    const [count,setCount] = useState(0)
-
-    const handleCount = ()=>{
-        setCount((p)=>p+1)
-    }
-
+  const [toggle,setToggle] = useState(true)
   return (
-    <DataContext.Provider value={{count,handleCount}}>
-        {children}
-    </DataContext.Provider>
+    <div>
+      <DataContext.Provider value={{toggle , setToggle}}>
+          {children}
+      </DataContext.Provider>
+    </div>
   )
 }
 

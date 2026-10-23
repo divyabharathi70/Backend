@@ -3,15 +3,20 @@ import Counter from './components/Counter'
 import OnOff from './components/OnOff'
 import InputStore from './components/InputStore'
 import ScrollIntoView from './components/ScrollIntoView'
+import InputFocus from './tasks/IpFocus'
 
 const App = () => {
   return (
     <div>
+      <h2>Practices</h2>
       <ShowText/>
       <Counter/>
       <OnOff/>
       <InputStore/>
       <ScrollIntoView/>
+
+      <h2>Tasks</h2>
+      <InputFocus/>
     </div>
   )
 }
