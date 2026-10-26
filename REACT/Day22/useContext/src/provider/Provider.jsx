@@ -6,7 +6,7 @@ const Provider = ({children}) => {
   const [toggle,setToggle] = useState(true)
   return (
     <div>
-      <DataContext.Provider value={{toggle , setToggle}}>
+      <DataContext.Provider value={{toggle,setToggle}}>
           {children}
       </DataContext.Provider>
     </div>

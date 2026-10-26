@@ -8,8 +8,6 @@ const useFetch = (url) => {
         try{
             const fetchData = await fetch(url)
             const dataParse = await fetchData.json()
-            console.log(fetchData);
-            console.log(dataParse);
             setProducts(dataParse.products)
         }
         catch(error){

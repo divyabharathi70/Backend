@@ -35,7 +35,6 @@ const SearchFilter = () => {
     let citydata = datas.map((e)=>e.address.city)
     // let removeDup = new Set(citydata)     -> gives string
     let removeDup = [...new Set(citydata)]
-    
 
   return (
     <div>

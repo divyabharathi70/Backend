@@ -1,12 +1,16 @@
-import { useContext } from "react"
-import DataContext from "./context/DataContext"
+import Theme from './components/Theme'
+import User from './components/User'
+import AuthContext from './provider/AuthContext'
 
-const App = () => { 
-  const {toggle,setToggle} = useContext(DataContext)
+const App = () => {
   return (
-    <div  style={toggle ? {backgroundColor : "red"} : {backgroundColor : "black" , color : "white"}}>
-      <h3>Hii</h3>
-      <button onClick={()=>setToggle(!toggle)}>Toggle Theme</button>
+    <div>
+      <h2>Task 1 - User Display </h2>
+      <User/>
+      <h2>Task 2 - Theme Change </h2>
+      <Theme/>
+      <h2>Task 3 - Authenticate User </h2>
+      <AuthContext/>
     </div>
   )
 }
