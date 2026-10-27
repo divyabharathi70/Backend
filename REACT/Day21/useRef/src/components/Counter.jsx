@@ -21,5 +21,4 @@ import { useRef } from "react"
      </div>
    ) 
  }
-
  export default Counter
